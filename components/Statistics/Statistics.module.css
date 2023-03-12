@@ -1,0 +1,41 @@
+.statisticsContainer {
+    background-color: #fff;
+    color: #151515;
+    padding: 6rem 8rem 4rem;
+}
+
+.statisticsContainer h2 {
+    font-size: 2.5rem;
+    width: 60%;
+    font-weight: 500;
+}
+
+.statisticsCarouselContainer {
+    margin-top: 4rem;
+    display: inline-flex;
+    flex-direction: row;
+    gap: 1.5rem;
+}
+
+.statisticsCardContainer {
+    height: 400px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: #151515;
+    color: #fff;
+    border-radius: 16px;
+}
+
+.statisticsCardContainer h3 {
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.statisticsCardContainer p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    width: 85%;
+}

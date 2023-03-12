@@ -1,0 +1,24 @@
+.accomplishmentsContainer {
+    background-color: #fff;
+    color: #151515;
+    padding: 6rem 8rem 4rem;
+}
+
+.accomplishmentsContainer h2 {
+    font-size: 2.5rem;
+    width: 60%;
+    font-weight: 500;
+}
+
+.awardsContainer {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+.logoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
