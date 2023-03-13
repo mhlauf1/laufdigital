@@ -1,9 +1,37 @@
+import { useState, useRef, useEffect } from "react";
 import styles from "./project.module.css";
 import Image from "next/image";
 import { projectData } from "../../utils/data";
 
-
 export default function Projects() {
+
+    const [fixedHeight, setFixedHeight] = useState(false);
+
+    const scollRef = useRef(null)
+
+    useEffect(() => {
+        window.addEventListener("scroll", setFixedSidebar);
+    }, []);
+
+    function setFixedSidebar() {
+        if (scollRef) {
+            const targetY = scollRef.current?.offsetTop;
+            const height = scollRef.current?.getBoundingClientRect().height;
+            const windowY = window.pageYOffset;
+            const endOfEl = targetY + height;
+            // console.log(windowY, 'windowY')
+            if (windowY >= targetY) {
+                setFixedHeight(true)
+            } 
+            if(windowY >= (endOfEl - 84)) {
+                setFixedHeight(false)
+
+            } else if (windowY <= targetY) {
+                setFixedHeight(false)
+            }
+        }
+    }
+
     return (
         <section className={styles.projectsContainer}>
             <div className={styles.projectHeaderContainer}>
@@ -13,14 +41,14 @@ export default function Projects() {
                     <span className={styles.subHeadingUnderline} />
                 </div>
             </div>
-            <div className={styles.gridContainer}>
-                <div className={styles.projectsGrid}>
-                    <div className={styles.projectsSidebar}>
+            <div ref={scollRef} className={styles.gridContainer}>
+                <div className={styles.projectsSidebar}>
+                    <div className={`${fixedHeight ? styles.fixedSidebar : ''}`}>
                         <button>All cases</button>
                     </div>
-                    <div className={styles.projectsContent}>
-                        <ProjectExamples />
-                    </div>
+                </div>
+                <div className={styles.projectsContent}>
+                    <ProjectExamples />
                 </div>
             </div>
         </section>
@@ -41,8 +69,9 @@ const ProjectExamples = () => {
                 <Image
                     priority
                     src={item.photoUrl}
-                    height={500}
-                    width={200}
+                    width={500}
+                    height={300}
+                    style={{ objectFit: 'contain' }}
                     alt={item.alt}
                 />
             </div>

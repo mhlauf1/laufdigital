@@ -40,69 +40,70 @@
 }
 
 .gridContainer {
-    height: 100vh;
-    width: 100vw;
-    display: grid;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
     position: relative;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 30px;
-}
-
-.projectsGrid {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    overflow-y: scroll;
-
 }
 
 .projectsSidebar {
-    border-right: 1px solid lightgrey;
+    flex: 1;
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    padding-top: 2rem;
+    border-right: 1px solid lightgray;
+    position: relative;
+    align-items: center;
 }
 
+.fixedSidebar {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+}
+
+
 .projectsSidebar button {
-    position: absolute;
-    top: 50px;
     padding: 1rem 4rem;
     background-color: rgba(22, 22, 241, 0.752);
     color: white;
     border-radius: 50px;
     text-transform: uppercase;
     font-weight: 300;
+    position: absolute;
+    top: 24px;
+    width: 300px;
 }
 
 .projectsContent {
+    position: relative;
+    flex: 3;
 }
+
 
 .projectCardContainer {
     display: flex;
     flex-direction: row;
     border-bottom: 1px solid lightgrey;
-
 }
 
 .projectDetails {
     flex: 1;
     padding: 3rem;
     border-right: 1px solid lightgrey;
-    height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
 }
 
-.projectDetails  h2 {
+.projectDetails h2 {
     font-size: 2.5rem;
     font-weight: 600;
     letter-spacing: -.5px;
 }
+
 .projectType {
     text-transform: uppercase;
 }
+
 .projectPhoto {
     flex: 1;
     padding: 3rem;

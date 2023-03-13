@@ -5,7 +5,7 @@ export const servicesData = [
     },
     {
         service: "Web design",
-        subHeading: "We design intelligent web products that boost business operations. Migrating your business processes into highly efficient web apps, we facilitate daily work operations, streamline collaboration and workflows, and increase user productivity.,
+        subHeading: "We design intelligent web products that boost business operations. Migrating your business processes into highly efficient web apps, we facilitate daily work operations, streamline collaboration and workflows, and increase user productivity.",
     },
     {
         service: "Mobile development",
